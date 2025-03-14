@@ -1,0 +1,31 @@
+# Dependencias
+node_modules
+.pnp
+.pnp.js
+
+# Archivos de construcción
+.next/
+out/
+build
+dist
+
+# Archivos de caché
+.vercel
+.turbo
+
+# Archivos de sistema
+.DS_Store
+*.pem
+
+# Archivos de debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos locales
+.env*.local
+.env
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts

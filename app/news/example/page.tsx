@@ -1,7 +1,8 @@
-import { Article } from "@/app/types";
-import { fetchArticles } from "@/app/hooks/useFetchArticles";
-import { notFound } from "next/navigation";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+
+import { fetchArticles } from "@/app/hooks/useFetchArticles";
+import { Article } from "@/app/types";
 
 const Noticia = async () => {
   let articles: Article[] = [];
@@ -19,14 +20,18 @@ const Noticia = async () => {
   if (articles.length === 0) {
     return (
       <div className="bg-white p-8 text-center">
-        <h1 className="text-2xl font-bold text-gray-800">No hay noticias disponibles</h1>
-        <p className="text-gray-600 mt-4">Intenta más tarde o contacta al administrador.</p>
+        <h1 className="text-2xl font-bold text-gray-800">
+          No hay noticias disponibles
+        </h1>
+        <p className="text-gray-600 mt-4">
+          Intenta más tarde o contacta al administrador.
+        </p>
       </div>
     );
   }
 
-  // Obtener el primer artículo para mostrar en detalle
-  const featuredArticle = articles[0];
+  // Obtener un artículo para mostrar en detalle
+  const featuredArticle = articles[1];
 
   return (
     <div className="bg-white">
@@ -37,11 +42,16 @@ const Noticia = async () => {
             <h1 className="text-2xl font-bold mb-6">Otras Noticias</h1>
             <div className="space-y-4">
               {articles.map((article) => (
-                <div key={article.id} className="p-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer">
+                <div
+                  key={article.id}
+                  className="p-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
+                >
                   <h3 className="font-semibold text-lg">{article.title}</h3>
                   <p className="text-sm text-gray-600">{article.subtitle}</p>
                   <div className="flex items-center mt-2 text-xs text-gray-500">
-                    <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
+                    <span>
+                      {new Date(article.publishedAt).toLocaleDateString()}
+                    </span>
                     <span className="mx-2">•</span>
                     <span>{article.category.name}</span>
                   </div>
@@ -49,7 +59,7 @@ const Noticia = async () => {
               ))}
             </div>
           </div>
-          
+
           {/* Contenido principal */}
           <div className="w-full md:w-2/3">
             {/* Etiquetas */}
@@ -68,40 +78,52 @@ const Noticia = async () => {
                 </span>
               )}
             </div>
-            
+
             {/* Artículo principal */}
             <div className="p-6">
-              <h1 className="text-3xl font-bold mb-2">{featuredArticle.title}</h1>
-              <h2 className="text-xl font-bold text-gray-700 mb-4">{featuredArticle.subtitle}</h2>
-              
+              <h1 className="text-3xl font-bold mb-2">
+                {featuredArticle.title}
+              </h1>
+              <h2 className="text-xl font-bold text-gray-700 mb-4">
+                {featuredArticle.subtitle}
+              </h2>
+
               {/* Imagen de portada */}
               {featuredArticle.cover && (
                 <div className="my-6 relative w-full h-[400px]">
                   <Image
                     src={featuredArticle.cover.url}
-                    alt={featuredArticle.cover.alternativeText || 'Portada'}
+                    alt={featuredArticle.cover.alternativeText || "Portada"}
                     fill
                     className="object-cover"
                   />
                 </div>
               )}
-              
+
               {/* Contenido del artículo */}
               <div className="my-6 prose max-w-none">
-                {featuredArticle.content && featuredArticle.content.map((contentItem) => (
-                  <div key={contentItem.id} dangerouslySetInnerHTML={{ __html: contentItem.body }} />
-                ))}
+                {featuredArticle.content &&
+                  featuredArticle.content.map((contentItem) => (
+                    <div
+                      key={contentItem.id}
+                      dangerouslySetInnerHTML={{ __html: contentItem.body }}
+                    />
+                  ))}
               </div>
-              
+
               {/* Información del autor y fecha */}
               <div className="mt-8 pt-4 border-t border-gray-200 flex justify-between items-center text-sm text-gray-600">
                 <div>
                   <span>Por: </span>
-                  <span className="font-medium">{featuredArticle.author?.name || 'Autor desconocido'}</span>
+                  <span className="font-medium">
+                    {featuredArticle.author?.name || "Autor desconocido"}
+                  </span>
                 </div>
                 <div>
                   <span>Publicado: </span>
-                  <span>{new Date(featuredArticle.publishedAt).toLocaleDateString()}</span>
+                  <span>
+                    {new Date(featuredArticle.publishedAt).toLocaleDateString()}
+                  </span>
                 </div>
               </div>
             </div>

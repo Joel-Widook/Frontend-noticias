@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
 import {
   Dialog,
   DialogPanel,
@@ -14,8 +16,8 @@ import {
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,7 +52,10 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-center">
-          <Link href="/search" className="text-sm/6 font-semibold text-gray-900">
+          <Link
+            href="/search"
+            className="text-sm/6 font-semibold text-gray-900"
+          >
             Busqueda <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
@@ -87,13 +92,19 @@ const Header = () => {
               <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>
             </PopoverPanel>
           </Popover>
-          <Link href="/sports" className="text-sm/6 font-semibold text-gray-900">
+          <Link
+            href="/sports"
+            className="text-sm/6 font-semibold text-gray-900"
+          >
             Deportes
           </Link>
           <Link href="/live" className="text-sm/6 font-semibold text-gray-900">
             Transmisiones en vivo
           </Link>
-          <Link href="/opinion" className="text-sm/6 font-semibold text-gray-900">
+          <Link
+            href="/opinion"
+            className="text-sm/6 font-semibold text-gray-900"
+          >
             Opinión
           </Link>
         </PopoverGroup>
