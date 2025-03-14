@@ -32,11 +32,11 @@ const Header = () => {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">ChapinTV</span>
             <Image
-              className="h-8 w-auto"
-              src="/logo-chapintv.png"
+              className="h-16 w-auto"
+              src="/logo-chapintv-blanco.svg"
               alt="Logo ChapinTV"
-              width={180}
-              height={38}
+              width={268}
+              height={82}
               priority
             />
           </Link>
