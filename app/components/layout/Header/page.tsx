@@ -33,7 +33,7 @@ const Header = () => {
             <span className="sr-only">ChapinTV</span>
             <Image
               className="h-16 w-auto"
-              src="/logo-chapintv-blanco.svg"
+              src="/logo-chapintv-black.svg"
               alt="Logo ChapinTV"
               width={268}
               height={82}
