@@ -69,10 +69,22 @@ export interface Category {
   publishedAt: string;
 }
 
+export interface CategoryProps {
+  category: Category;
+  image: Image;
+}
+
 export interface ContentItem {
   __component: string;
   id: number;
   body: string;
+}
+
+export interface Image {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 export interface Tag {

@@ -21,23 +21,36 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [fullMenuOpen, setFullMenuOpen] = useState(false);
 
   return (
     <header className="bg-white">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex items-center justify-between"
       >
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+        <div className="flex lg:flex-1 items-center">
+          <div className="border-r-secondary-300 border-r-[1px] h-[100px] w-[94px] flex items-center justify-center cursor-pointer">
+            <Image
+              className="h-auto w-auto"
+              src="/hamburguer-menu.svg"
+              alt="Logo ChapinTV"
+              width={34}
+              height={24}
+              priority
+              onClick={() => setMobileMenuOpen(true)}
+            />
+          </div>
+          <Link href="/" className="ml-3.5">
             <span className="sr-only">ChapinTV</span>
             <Image
-              className="h-16 w-auto"
+              className="h-auto w-[268px]"
               src="/logo-chapintv-black.svg"
               alt="Logo ChapinTV"
               width={268}
               height={82}
               priority
+              onClick={() => console.log("Logo clicked")}
             />
           </Link>
         </div>
@@ -51,20 +64,15 @@ const Header = () => {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+        <PopoverGroup className="hidden lg:flex mr-3">
           <Link
-            href="/search"
-            className="text-sm/6 font-semibold text-gray-900"
+            href="/"
+            className="text-sm/6 px-3 font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900"
           >
-            Busqueda <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <Link href="/" className="text-sm/6 font-semibold text-gray-900">
             Inicio
           </Link>
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+            <PopoverButton className="flex items-center cursor-pointer gap-x-1 text-sm/6 px-3 font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900">
               Noticias
               <ChevronDownIcon
                 aria-hidden="true"
@@ -81,7 +89,7 @@ const Header = () => {
                   <div className="flex-auto">
                     <Link
                       href="/news/example"
-                      className="block font-semibold text-gray-900"
+                      className="block font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900"
                     >
                       Más noticias
                       <span className="absolute inset-0" />
@@ -92,23 +100,56 @@ const Header = () => {
               <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>
             </PopoverPanel>
           </Popover>
+          <Popover className="relative">
+            <PopoverButton className="flex items-center cursor-pointer gap-x-1 text-sm/6 px-3 font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900">
+              Deportes
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="size-5 flex-none text-gray-400"
+              />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute top-full -left-8 z-10 mt-3 max-w-fit w-screen overflow-hidden rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+            >
+              <div className="p-4">
+                <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                  <div className="flex-auto">
+                    <Link
+                      href="/news/example"
+                      className="block font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900"
+                    >
+                      Más deportes
+                      <span className="absolute inset-0" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>
+            </PopoverPanel>
+          </Popover>
           <Link
-            href="/sports"
-            className="text-sm/6 font-semibold text-gray-900"
+            href="/live"
+            className="text-sm/6 px-3 font-semibold text-secondary-1100 hover:text-primary-900 active:text-primary-900"
           >
-            Deportes
+            Transmisiones
           </Link>
-          <Link href="/live" className="text-sm/6 font-semibold text-gray-900">
-            Transmisiones en vivo
-          </Link>
-          <Link
-            href="/opinion"
-            className="text-sm/6 font-semibold text-gray-900"
-          >
-            Opinión
-          </Link>
+          <div className="flex justify-between items-center gap-3 rounded-lg text-xs p-1 font-normal bg-[#BB120C] text-white">
+            <Image
+              alt=""
+              src="/wifi.svg"
+              className="h-4 w-4"
+              width={16}
+              height={16}
+            />
+            <p className="cursor-default">En vivo</p>
+          </div>
         </PopoverGroup>
       </nav>
+      <div className="mx-auto flex items-center justify-center">
+        <p>ChapinTV</p>
+      </div>
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -171,7 +212,7 @@ const Header = () => {
                   href="/live"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Transmisiones en vivo
+                  Transmisiones
                 </Link>
                 <Link
                   href="/opinion"

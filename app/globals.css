@@ -22,7 +22,7 @@
   --color-primary-700: #003a5c;
   --color-primary-950: #000000;
   --color-primary-800: #001a29;
-  --color-primary-900: #00060a;
+  --color-primary-900: #0063ab;
   --color-primary-1000: #064674;
   --color-primary-1100: #052540;
 
@@ -30,14 +30,16 @@
   --color-secondary-50: #fcfcfc;
   --color-secondary-100: #e5f5ff;
   --color-secondary-200: #c4e9ff;
-  --color-secondary-300: #96d9ff;
+  --color-secondary-300: #e8e8e8;
   --color-secondary-400: #e0e0e0;
   --color-secondary-500: #14a9ff;
-  --color-secondary-600: #0078be;
+  --color-secondary-600: #cecece;
   --color-secondary-700: #003a5c;
   --color-secondary-950: #000000;
   --color-secondary-800: #001a29;
   --color-secondary-900: #00060a;
+  --color-secondary-1000: #646464;
+  --color-secondary-1100: #1f1f1f;
 }
 
 @media (prefers-color-scheme: dark) {
