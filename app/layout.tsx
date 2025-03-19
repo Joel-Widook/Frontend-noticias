@@ -6,16 +6,6 @@ import Header from "./components/layout/Header/page";
 
 import type { Metadata } from "next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const interSans = Inter({
   variable: "--font-inter-sans",
   subsets: ["latin"],

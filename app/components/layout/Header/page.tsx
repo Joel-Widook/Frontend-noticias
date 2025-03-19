@@ -20,11 +20,17 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
+  // Estado para controlar qué columnas están expandidas
+  const [expandedColumns, setExpandedColumns] = useState<{
+    [key: string]: boolean;
+  }>({});
+  // Estado para controlar el menú móvil
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Estado para controlar el menú completo
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-background">
       <nav
         aria-label="Global"
         className="mx-auto flex items-center justify-between"
@@ -147,8 +153,436 @@ const Header = () => {
           </div>
         </PopoverGroup>
       </nav>
-      <div className="mx-auto flex items-center justify-center">
-        <p>ChapinTV</p>
+      <div className="mx-auto flex flex-col p-4">
+        <div className="flex mx-auto items-center bg-foreground rounded-4xl w-fit">
+          <form
+            action="/search"
+            className="flex items-center py-4 pl-5 pr-4 gap-3 font-normal text-sm"
+          >
+            <input
+              type="text"
+              placeholder="Buscar aquí..."
+              name="search"
+              className="focus:outline-none min-w-[200px] sm:min-w-[350px] md:min-w-[400px] lg:min-w-[550px] text-secondary-800"
+            />
+            <button type="submit">
+              <Image
+                alt=""
+                src="/search.svg"
+                className="h-5 w-5"
+                width={20}
+                height={20}
+              />
+            </button>
+          </form>
+        </div>
+        <div className="grid grid-cols-1 gap-8 px-4 pt-20 md:pt-25  pb-7 md:pb-15 md:grid-cols-3 lg:grid-cols-5 mx-auto max-w-screen-xl">
+          <div>
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() =>
+                setExpandedColumns({
+                  ...expandedColumns,
+                  info: !expandedColumns.info,
+                })
+              }
+            >
+              <h2 className="text-xl font-bold text-primary-950">Vertical 1</h2>
+              <svg
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="#064674"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <ul
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+            >
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Guía de TV"
+                >
+                  Sección 1
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Transmisiones en Vivo"
+                >
+                  Sección 2
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Noticias"
+                >
+                  Sección 3
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Eventos"
+                >
+                  Sección 4
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Empleos"
+                >
+                  Sección 5
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() =>
+                setExpandedColumns({
+                  ...expandedColumns,
+                  support: !expandedColumns.support,
+                })
+              }
+            >
+              <h2 className="text-xl font-bold text-primary-950">Vertical 2</h2>
+              <svg
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="#064674"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <ul
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+            >
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Guía de TV"
+                >
+                  Sección 1
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Transmisiones en Vivo"
+                >
+                  Sección 2
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Noticias"
+                >
+                  Sección 3
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Eventos"
+                >
+                  Sección 4
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Empleos"
+                >
+                  Sección 5
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() =>
+                setExpandedColumns({
+                  ...expandedColumns,
+                  business: !expandedColumns.business,
+                })
+              }
+            >
+              <h2 className="text-xl font-bold text-primary-950">Vertical 3</h2>
+              <svg
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="#064674"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <ul
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+            >
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Guía de TV"
+                >
+                  Sección 1
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Transmisiones en Vivo"
+                >
+                  Sección 2
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Noticias"
+                >
+                  Sección 3
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Eventos"
+                >
+                  Sección 4
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Empleos"
+                >
+                  Sección 5
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() =>
+                setExpandedColumns({
+                  ...expandedColumns,
+                  social: !expandedColumns.social,
+                })
+              }
+            >
+              <h2 className="text-xl font-bold text-primary-950">Vertical 4</h2>
+              <svg
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="#064674"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <ul
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+            >
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Guía de TV"
+                >
+                  Sección 1
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Transmisiones en Vivo"
+                >
+                  Sección 2
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Noticias"
+                >
+                  Sección 3
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Eventos"
+                >
+                  Sección 4
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Empleos"
+                >
+                  Sección 5
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() =>
+                setExpandedColumns({
+                  ...expandedColumns,
+                  other: !expandedColumns.other,
+                })
+              }
+            >
+              <h2 className="text-xl font-bold text-primary-950">Vertical 5</h2>
+              <svg
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="#064674"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <ul
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+            >
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Guía de TV"
+                >
+                  Sección 1
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Transmisiones en Vivo"
+                >
+                  Sección 2
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Noticias"
+                >
+                  Sección 3
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Eventos"
+                >
+                  Sección 4
+                </Link>
+              </li>
+              <li className="p-3 mt-3">
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Empleos"
+                >
+                  Sección 5
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <Dialog
         open={mobileMenuOpen}

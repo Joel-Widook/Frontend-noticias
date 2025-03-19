@@ -1,45 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfdfd;
+  --foreground: #f8f8f8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter-sans);
 
   /* Primary */
-  --color-primary-50: #f8fdff;
-  --color-primary-100: #e5f5ff;
-  --color-primary-200: #c4e9ff;
-  --color-primary-300: #96d9ff;
-  --color-primary-400: #5cc3ff;
-  --color-primary-500: #14a9ff;
-  --color-primary-600: #76c9ff;
-  --color-primary-700: #003a5c;
-  --color-primary-950: #000000;
-  --color-primary-800: #001a29;
-  --color-primary-900: #0063ab;
-  --color-primary-1000: #064674;
-  --color-primary-1100: #052540;
+  --color-primary-50: #fafdffff;
+  --color-primary-100: #f2faffff;
+  --color-primary-200: #e3f5ffff;
+  --color-primary-300: #ceefffff;
+  --color-primary-400: #b7e6ffff;
+  --color-primary-500: #9bdaffff;
+  --color-primary-600: #76c9ffff;
+  --color-primary-700: #28b2ffff;
+  --color-primary-800: #14a9ffff;
+  --color-primary-900: #0063abff;
+  --color-primary-950: #064674ff;
+  --color-primary-1100: #052540ff;
 
   /* Secondary */
-  --color-secondary-50: #fcfcfc;
-  --color-secondary-100: #e5f5ff;
-  --color-secondary-200: #c4e9ff;
-  --color-secondary-300: #e8e8e8;
-  --color-secondary-400: #e0e0e0;
-  --color-secondary-500: #14a9ff;
-  --color-secondary-600: #cecece;
-  --color-secondary-700: #003a5c;
-  --color-secondary-950: #000000;
-  --color-secondary-800: #001a29;
-  --color-secondary-900: #00060a;
-  --color-secondary-1000: #646464;
-  --color-secondary-1100: #1f1f1f;
+  --color-secondary-50: #fcfcfcff;
+  --color-secondary-100: #f3f3f3ff;
+  --color-secondary-200: #e4e4e4ff;
+  --color-secondary-300: #d0d0d0ff;
+  --color-secondary-400: #b5b5b5ff;
+  --color-secondary-500: #959595ff;
+  --color-secondary-600: #6f6f6fff;
+  --color-secondary-700: #424242ff;
+  --color-secondary-800: #2c2c2cff;
+  --color-secondary-900: #1e1e1eff;
+  --color-secondary-950: #1a1a1aff;
+  --color-secondary-1100: #1f1f1fff;
 }
 
 @media (prefers-color-scheme: dark) {
