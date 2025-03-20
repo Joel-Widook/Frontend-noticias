@@ -40,11 +40,11 @@ const Header = () => {
             <Image
               className="h-auto w-auto"
               src="/hamburguer-menu.svg"
-              alt="Logo ChapinTV"
+              alt="Hamburguer Menu"
               width={34}
               height={24}
               priority
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setFullMenuOpen(!fullMenuOpen)}
             />
           </div>
           <Link href="/" className="ml-3.5">
@@ -153,7 +153,9 @@ const Header = () => {
           </div>
         </PopoverGroup>
       </nav>
-      <div className="mx-auto flex flex-col p-4">
+      <div
+        className={`mx-auto flex-col p-4  ${fullMenuOpen ? "flex" : "hidden"}`}
+      >
         <div className="flex mx-auto items-center bg-foreground rounded-4xl w-fit">
           <form
             action="/search"
@@ -176,7 +178,7 @@ const Header = () => {
             </button>
           </form>
         </div>
-        <div className="grid grid-cols-1 gap-8 px-4 pt-20 md:pt-25  pb-7 md:pb-15 md:grid-cols-3 lg:grid-cols-5 mx-auto max-w-screen-xl">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-4 pt-20 md:pt-25 pb-7 md:pb-15 md:grid-cols-3 lg:grid-cols-5 mx-auto max-w-screen-xl w-full">
           <div>
             <div
               className="flex items-center justify-between cursor-pointer"
@@ -207,6 +209,7 @@ const Header = () => {
               className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
             >
               <li className="p-3 mt-3">
+                {" "}
                 <Link
                   href="#"
                   target="_blank"
@@ -270,7 +273,7 @@ const Header = () => {
             >
               <h2 className="text-xl font-bold text-primary-950">Vertical 2</h2>
               <svg
-                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.support ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="#064674"
                 viewBox="0 0 24 24"
@@ -285,8 +288,9 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.support ? "max-h-[500px]" : "max-h-0"}`}
             >
+              {" "}
               <li className="p-3 mt-3">
                 <Link
                   href="#"
@@ -351,7 +355,7 @@ const Header = () => {
             >
               <h2 className="text-xl font-bold text-primary-950">Vertical 3</h2>
               <svg
-                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.business ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="#064674"
                 viewBox="0 0 24 24"
@@ -366,8 +370,9 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.business ? "max-h-[500px]" : "max-h-0"}`}
             >
+              {" "}
               <li className="p-3 mt-3">
                 <Link
                   href="#"
@@ -432,7 +437,7 @@ const Header = () => {
             >
               <h2 className="text-xl font-bold text-primary-950">Vertical 4</h2>
               <svg
-                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.social ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="#064674"
                 viewBox="0 0 24 24"
@@ -447,8 +452,9 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.social ? "max-h-[500px]" : "max-h-0"}`}
             >
+              {" "}
               <li className="p-3 mt-3">
                 <Link
                   href="#"
@@ -513,7 +519,7 @@ const Header = () => {
             >
               <h2 className="text-xl font-bold text-primary-950">Vertical 5</h2>
               <svg
-                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.info ? "rotate-180" : ""}`}
+                className={`w-6 h-6 transform transition-transform duration-200 my-auto ${expandedColumns.other ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="#064674"
                 viewBox="0 0 24 24"
@@ -528,8 +534,9 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.info ? "max-h-[500px]" : "max-h-0"}`}
+              className={`font-semibold text-sm text-primary-900 gap-3 transition-all duration-300 overflow-hidden ${expandedColumns.other ? "max-h-[500px]" : "max-h-0"}`}
             >
+              {" "}
               <li className="p-3 mt-3">
                 <Link
                   href="#"
@@ -581,6 +588,75 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center mx-auto max-w-screen-xl border-t-foreground border-t-2">
+          <div className="flex items-center justify-center gap-3.5 py-1.5">
+            <a
+              href="https://www.facebook.com/chapintv/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                alt="Facebook"
+                src="/facebook.svg"
+                className="w-6 h-6"
+                width={9}
+                height={17}
+              />
+            </a>
+            <a
+              href="https://twitter.com/chapintv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                alt="Twitter"
+                src="/twitter.svg"
+                className="w-6 h-6"
+                width={14}
+                height={17}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/chapintv/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                alt="Instagram"
+                src="/instagram.svg"
+                className="w-6 h-6"
+                width={13}
+                height={17}
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/c/chapintv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                alt="YouTube"
+                src="/youtube.svg"
+                className="w-6 h-6"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              href="https://www.tiktok.com/@chapintv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                alt="TikTok"
+                src="/tiktok.svg"
+                className="w-6 h-6"
+                width={24}
+                height={24}
+              />
+            </a>
           </div>
         </div>
       </div>
