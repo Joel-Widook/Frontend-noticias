@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/layout/Footer/page";
 import Header from "./components/layout/Header/page";
+import { AdsProvider } from "./context/AdsContext";
 
 import type { Metadata } from "next";
 
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${interSans.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <AdsProvider initialValue="full">
+          <Header />
+          {children}
+          <Footer />
+        </AdsProvider>
       </body>
     </html>
   );

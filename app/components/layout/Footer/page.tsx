@@ -275,22 +275,22 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <Link
-                  href="https://x.com/chapintv_"
-                  target="_blank"
-                  className="hover:underline"
-                  title="Twitter"
-                >
-                  Twitter
-                </Link>
-              </li>
-              <li className="mb-4">
-                <Link
                   href="https://www.instagram.com/chapintv/"
                   target="_blank"
                   className="hover:underline"
                   title="Instagram"
                 >
                   Instagram
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="https://x.com/chapintv_"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Twitter/X"
+                >
+                  Twitter/X
                 </Link>
               </li>
               <li className="mb-4">
@@ -311,6 +311,16 @@ const Footer = () => {
                   title="Tiktok"
                 >
                   Tiktok
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="https://www.pinterest.com/webchapintv"
+                  target="_blank"
+                  className="hover:underline"
+                  title="Pinterest"
+                >
+                  Pinterest
                 </Link>
               </li>
             </ul>

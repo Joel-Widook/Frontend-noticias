@@ -39,14 +39,18 @@ const Noticia = async () => {
         <div className="flex flex-col md:flex-row bg-gray-50 min-h-screen">
           {/* Sidebar con otras noticias */}
           <div className="w-full md:w-1/3 p-4 border-r border-gray-200">
-            <h1 className="text-2xl font-bold mb-6">Otras Noticias</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-6">
+              Otras Noticias
+            </h1>
             <div className="space-y-4">
               {articles.map((article) => (
                 <div
                   key={article.id}
                   className="p-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
                 >
-                  <h3 className="font-semibold text-lg">{article.title}</h3>
+                  <h3 className="font-semibold text-lg text-gray-800">
+                    {article.title}
+                  </h3>
                   <p className="text-sm text-gray-600">{article.subtitle}</p>
                   <div className="flex items-center mt-2 text-xs text-gray-500">
                     <span>
