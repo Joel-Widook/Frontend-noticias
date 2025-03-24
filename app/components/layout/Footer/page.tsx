@@ -328,8 +328,16 @@ const Footer = () => {
         </div>
         <div className="py-5 md:py-6 lg:py-9 border-t border-primary-1000 flex items-center justify-center">
           <span className="text-base text-center text-[#b5b5b5]">
-            {new Date().getFullYear()} <a href="#"> ChapinTV</a>. Todos los
-            derechos reservados.
+            Desarrollado por{" "}
+            <Link
+              href="https://widook.com/"
+              target="_blank"
+              className="hover:underline font-bold"
+            >
+              {" "}
+              Widook
+            </Link>{" "}
+            {new Date().getFullYear()}. Todos los derechos reservados.
           </span>
         </div>
       </div>
