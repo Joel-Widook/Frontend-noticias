@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 
 import "./globals.css";
+import ChannelBar from "./components/layout/ChannelBar/page";
 import Footer from "./components/layout/Footer/page";
 import Header from "./components/layout/Header/page";
 import { AdsProvider } from "./context/AdsContext";
@@ -24,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${interSans.variable} antialiased`}>
-        <AdsProvider initialValue="full">
+        <AdsProvider initialValue="">
+          <ChannelBar />
           <Header />
           {children}
           <Footer />

@@ -8,6 +8,23 @@ import Link from "next/link";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
+// Import social media icons
+import {
+  FacebookIcon,
+  InstagramIcon,
+  TwitterXIcon,
+  YouTubeIcon,
+  TikTokIcon,
+  PinterestIcon,
+} from "../../../components/icons/social";
+// Import UI icons
+import {
+  WifiIcon,
+  SearchIcon,
+  HamburgerMenuIcon,
+  HamburgerMobileMenuIcon,
+  XIcon,
+} from "../../../components/icons/ui";
 import { useAds } from "../../../context/AdsContext";
 
 const Header = () => {
@@ -52,13 +69,10 @@ const Header = () => {
         >
           <div className="flex lg:flex-1 items-center">
             <div className="hidden lg:flex border-r-secondary-300 border-r-[1px] h-[100px] w-[94px] items-center justify-center cursor-pointer">
-              <Image
+              <HamburgerMenuIcon
                 className="h-auto w-auto"
-                src="/hamburguer-menu.svg"
-                alt="Hamburguer Menu"
-                width={34}
-                height={24}
-                priority
+                size={34}
+                color="#0063AB"
                 onClick={() => handleMenu(true)}
               />
             </div>
@@ -76,23 +90,17 @@ const Header = () => {
           </div>
           <div className="flex lg:hidden bg-foreground h-[40px] w-[40px] m-4 rounded-sm items-center justify-center cursor-pointer">
             {fullMenuOpen ? (
-              <Image
+              <XIcon
                 className="h-auto w-auto"
-                src="/X.svg"
-                alt="Abrir Menu"
-                width={34}
-                height={24}
-                priority
+                size={20}
+                color="#0063AB"
                 onClick={() => handleMenu(false)}
               />
             ) : (
-              <Image
+              <HamburgerMobileMenuIcon
                 className="h-auto w-auto"
-                src="/hamburguer-mobile-menu.svg"
-                alt="Cerrar Menu"
-                width={24}
-                height={24}
-                priority
+                size={24}
+                color="#0063AB"
                 onClick={() => handleMenu(false)}
               />
             )}
@@ -169,13 +177,7 @@ const Header = () => {
               Transmisiones
             </Link>
             <div className="flex justify-between items-center gap-3 rounded-lg text-xs p-1 font-normal bg-[#BB120C] text-white">
-              <Image
-                alt=""
-                src="/wifi.svg"
-                className="h-4 w-4"
-                width={16}
-                height={16}
-              />
+              <WifiIcon size={16} color="#fff" className="h-4 w-4" />
               <p className="cursor-default">En vivo</p>
             </div>
           </div>
@@ -195,13 +197,7 @@ const Header = () => {
                 className="focus:outline-none min-w-[200px] sm:min-w-[350px] md:min-w-[400px] lg:min-w-[550px] text-secondary-800"
               />
               <button type="submit">
-                <Image
-                  alt=""
-                  src="/search.svg"
-                  className="h-5 w-5"
-                  width={20}
-                  height={20}
-                />
+                <SearchIcon size={20} color="#000" className="h-5 w-5" />
               </button>
             </form>
           </div>
@@ -319,13 +315,7 @@ const Header = () => {
                     Transmisiones
                   </Link>
                   <div className="flex justify-between items-center gap-3 rounded-lg text-xs p-1 font-normal bg-[#BB120C] text-white">
-                    <Image
-                      alt=""
-                      src="/wifi.svg"
-                      className="h-4 w-4"
-                      width={16}
-                      height={16}
-                    />
+                    <WifiIcon size={16} color="#fff" className="h-4 w-4" />
                     <p className="cursor-default">En vivo</p>
                   </div>
                 </div>
@@ -664,78 +654,42 @@ const Header = () => {
                 target="_blank"
                 title="Facebook"
               >
-                <Image
-                  alt="Facebook"
-                  src="/facebook.svg"
-                  className="w-6 h-6"
-                  width={9}
-                  height={17}
-                />
+                <FacebookIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
               <Link
                 href="https://www.instagram.com/chapintv/"
                 target="_blank"
                 title="Instagram"
               >
-                <Image
-                  alt="Instagram"
-                  src="/instagram.svg"
-                  className="w-6 h-6"
-                  width={13}
-                  height={17}
-                />
+                <InstagramIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
               <Link
                 href="https://x.com/chapintv_"
                 target="_blank"
                 title="Twitter/X"
               >
-                <Image
-                  alt="Twitter"
-                  src="/twitter-x.svg"
-                  className="w-6 h-6"
-                  width={14}
-                  height={17}
-                />
+                <TwitterXIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
               <Link
                 href="https://www.youtube.com/channel/UCJcN367ge_Yo1p7b20_KSaA"
                 target="_blank"
                 title="Youtube"
               >
-                <Image
-                  alt="YouTube"
-                  src="/youtube.svg"
-                  className="w-6 h-6"
-                  width={24}
-                  height={24}
-                />
+                <YouTubeIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
               <Link
                 href="https://www.tiktok.com/@chapintv_"
                 target="_blank"
                 title="Tiktok"
               >
-                <Image
-                  alt="TikTok"
-                  src="/tiktok.svg"
-                  className="w-6 h-6"
-                  width={24}
-                  height={24}
-                />
+                <TikTokIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
               <Link
                 href="https://www.pinterest.com/webchapintv"
                 target="_blank"
                 title="Pinterest"
               >
-                <Image
-                  alt="Pinterest"
-                  src="/pinterest.svg"
-                  className="w-6 h-6"
-                  width={24}
-                  height={24}
-                />
+                <PinterestIcon size={16} color="#000" className="w-6 h-6" />
               </Link>
             </div>
           </div>
