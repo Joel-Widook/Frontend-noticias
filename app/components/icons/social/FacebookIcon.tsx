@@ -1,4 +1,4 @@
-import { IconProps } from "../types";
+import { IconProps } from "../../../types/index";
 
 export const FacebookIcon = ({
   size = 16,

@@ -1,3 +1,11 @@
+import { SVGProps } from "react";
+
+export interface IconProps extends SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 export interface Format {
   name: string;
   hash: string;

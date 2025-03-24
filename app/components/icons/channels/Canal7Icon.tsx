@@ -1,4 +1,4 @@
-import { IconProps } from "../types";
+import { IconProps } from "../../../types/index";
 
 export const Canal7Icon = ({
   size = 16,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconProps } from "../types";
+import { IconProps } from "../../../types/index";
 
 export const HamburgerMobileMenuIcon: React.FC<IconProps> = ({
   size = 24,
